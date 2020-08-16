@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.10)
+project(cpp-algo-composite-cor)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_library(compsor src/attack_cor.cpp src/base_creature.cpp)
+target_include_directories(compsor PUBLIC include)
+add_executable(main src/main.cpp)
+target_link_libraries(main compsor)
