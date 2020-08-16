@@ -4,5 +4,6 @@
 
 int main() {
     creature::base_creature creature_1 {100, 10, 5};
+    creature::base_creature creature_2 {200, 50, 10};
     return 0;
 }
