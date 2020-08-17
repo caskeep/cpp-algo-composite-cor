@@ -17,6 +17,8 @@ attack_counter_info::attack_counter_info(creature::base_creature *attacker, crea
     , fix_out_multi_(.0)
 {}
 
+attack_cor_base::attack_cor_base() : next_(nullptr) {}
+
 attack_add::attack_add(int add_value)
     : add_value_(add_value)
 {}
