@@ -51,7 +51,17 @@ class attack_add : public attack_cor_base {
     int add_value_;
   public:
     attack_add(int add_value);
-    ~attack_add() = default;
+    ~attack_add() override = default;
+
+    void handle(attack_counter_info &counter) override;
+};
+
+class attack_add_inner_multi : public attack_cor_base {
+  private:
+    int add_inner_multi_;
+  public:
+    attack_add_inner_multi(int add_value);
+    ~attack_add_inner_multi() override = default;
 
     void handle(attack_counter_info &counter) override;
 };

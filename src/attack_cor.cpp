@@ -25,5 +25,14 @@ void attack_add::handle(attack_counter_info &counter) {
     counter.add_to_fix_add(add_value_);
     attack_cor_base::handle(counter);
 }
+
+attack_add_inner_multi::attack_add_inner_multi(int add_value) 
+    : add_inner_multi_(add_value)
+{}
+
+void attack_add_inner_multi::handle(attack_counter_info &counter) {
+    counter.add_to_inner_multi(add_inner_multi_);
+    attack_cor_base::handle(counter);
+}
     
 } // namespace compcor
