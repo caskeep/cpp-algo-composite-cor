@@ -12,4 +12,8 @@ TEST(AttackCor, Add) {
     EXPECT_EQ(calculation::cal_base::cal_basic_damage(&creature_1, &creature_2, basic_damage), 0);
     EXPECT_EQ(basic_damage, 10.0);
     compcor::attack_counter_info crt_1_hit_crt_2 {&creature_1, &creature_2, basic_damage};
+    compcor::attack_add attack_add_cor{10};
+    compcor::attack_add_inner_multi attack_add_inner_multi(2);
+    attack_add_cor.add(&attack_add_inner_multi);
+    attack_add_cor.handle(crt_1_hit_crt_2);
 }

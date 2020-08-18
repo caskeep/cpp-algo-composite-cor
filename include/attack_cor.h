@@ -15,6 +15,7 @@ class attack_result {
     double final_damage_;
   public:
     attack_result();
+    double final_damage() const { return final_damage_; }
 };
 
 // final_damage = (basic_damage * fix_inner_multi + fix_add) * fix_out_multi
@@ -43,6 +44,11 @@ class attack_cor_base {
     virtual void handle(attack_counter_info &counter) {
         if (next_) next_->handle(counter);
         else return;
+    }
+
+    void add(attack_cor_base *new_cor) {
+        if (next_) next_->add(new_cor);
+        else next_ = new_cor;
     }
 };
 
